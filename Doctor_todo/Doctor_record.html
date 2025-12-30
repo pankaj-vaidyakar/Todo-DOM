@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-app</title>
+   <link rel="stylesheet" href="./Doctor.css">
+  </head>
+  <body>
+    <!-- Dont make any changes here -->
+    <h1>Hospital - Doctor Records</h1>
+    
+
+    <div>
+      <!-- ***** We are using form here  ****  -->
+      <form >
+        <label >Doctor Name</label><br />
+        <input id="docname" type="text" placeholder="Enter Doctor Name" /><br />
+        <label >Doctor ID</label><br />
+        <input id="docid" type="text" placeholder="Enter Doctor ID" /><br />
+        <label >Specialization</label><br />
+        <select id="specialization">
+          <option value="">Select Specialization </option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="ENT">ENT</option>
+          <option value="Dentist">Dentist</option>
+          <option value="Gynecologist">Gynecologist</option>
+          <option value="COVID">COVID</option>
+        </select><br />
+        <label >Experience</label><br />
+        <input id="exp" type="number" placeholder="Enter Experience" /><br />
+        <label >Email Address</label><br />
+        <input id="email" type="email" placeholder="Enter Email address" /><br />
+        <label >Mobile Number</label><br />
+        <input id="mobile" type="number" placeholder="Enter Mobile Number " /><br />
+        
+        <input type="submit" />
+      </form>
+      
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Doctor ID</th>
+            <th>Specialization</th>
+            <th>Experience <br> in years</th>
+            <th>Email Address</th>
+            <th>Mobile Number</th>
+            <th>Role</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script src="./Doctor.js"></script>

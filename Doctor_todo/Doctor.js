@@ -11,6 +11,7 @@ form.addEventListener("submit",getData)
 
 let doctor_arr =JSON.parse(localStorage.getItem("doctor_arr")) || [];
 
+display(doctor_arr)
 function getData(){
     event.preventDefault()
  

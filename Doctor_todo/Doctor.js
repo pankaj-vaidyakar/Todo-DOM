@@ -9,7 +9,7 @@ let mobile = document.getElementById("mobile")
 
 form.addEventListener("submit",getData)
 
-let doctor_arr = []
+let doctor_arr =JSON.parse(localStorage.getItem("doctor_arr")) || [];
 
 function getData(){
     event.preventDefault()
@@ -22,12 +22,13 @@ function getData(){
     email:email.value,
     mobile:mobile.value
    }
-  
+   
    doctor_arr.push(doctor_obj)
 //    console.log(doctor_arr);
 
-display(doctor_arr)
-   
+display(doctor_arr); 
+  
+localStorage.setItem("doctor_arr",JSON.stringify(doctor_arr)); 
     
 }
 

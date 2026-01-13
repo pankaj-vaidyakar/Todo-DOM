@@ -36,7 +36,7 @@ localStorage.setItem("doctor_arr",JSON.stringify(doctor_arr));
 
 function display(data){
 tbody.innerHTML = " ";
-    data.map(function(el){
+    data.map(function(el,index){
     let row = document.createElement("tr")
     let col1 = document.createElement("td")
     col1.innerText = el.docname;
@@ -59,18 +59,23 @@ tbody.innerHTML = " ";
         el.exp = "Traniee"
     }
     col7.innerText = el.exp;
+
     let col8 = document.createElement("td")
     col8.innerText = "Delete"
     col8.style.color = "white"
     col8.style.backgroundColor = "red"
-    col8.addEventListener("click",delketefun)
+    col8.addEventListener("click",function(){
+        delketefun(index)
+    })
 
     row.append(col1,col2,col3,col4,col5,col6,col7,col8)
     tbody.append(row)
     })
 }
 
-function delketefun(){
-    console.log(event.target.parentNode.remove());
+function delketefun(num){
+    doctor_arr.splice(num,1)
+    localStorage.setItem("doctor_arr", JSON.stringify(doctor_arr)); 
+    display(doctor_arr)
     
 }

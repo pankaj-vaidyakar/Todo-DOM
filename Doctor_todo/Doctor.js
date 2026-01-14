@@ -65,7 +65,7 @@ tbody.innerHTML = " ";
     col8.style.color = "white"
     col8.style.backgroundColor = "red"
     col8.addEventListener("click",function(){
-        delketefun(index)
+        removefun(index)
     })
 
     row.append(col1,col2,col3,col4,col5,col6,col7,col8)
@@ -73,7 +73,7 @@ tbody.innerHTML = " ";
     })
 }
 
-function delketefun(num){
+function removefun(num){
     doctor_arr.splice(num,1)
     localStorage.setItem("doctor_arr", JSON.stringify(doctor_arr)); 
     display(doctor_arr)

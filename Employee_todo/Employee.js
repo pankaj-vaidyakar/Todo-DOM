@@ -9,7 +9,7 @@ let mobile = document.getElementById("mobile")
 
 form.addEventListener("submit",getData)
 
-let Employee_arr =JSON.parse(localStorage.getItem("Employee_arr")) || [];
+let Employee_arr =JSON.parse(localStorage.getItem("Employee_data")) || [];
 display(Employee_arr);
 
 function getData(){
@@ -27,7 +27,7 @@ function getData(){
  
  Employee_arr.push(Employee_obj)
   
- localStorage.setItem("Employee_arr", JSON.stringify(Employee_arr));
+ localStorage.setItem("Employee_data", JSON.stringify(Employee_arr));
 
 //  console.log(Employee_arr);
  display(Employee_arr);
@@ -65,13 +65,17 @@ function display(data){
     col8.innerText = "Delete"
     col8.style.color = "white"
     col8.style.backgroundColor = "red"
-    col8.addEventListener("click",Deletedata)
+    col8.addEventListener("click",function(){
+      deletefun(index)
+    })
     row.append(col1,col2,col3,col4,col5,col6,col7,col8);
     tbody.append(row);
   });
 }
 
-function Deletedata(){
-  event.target.parentNode.remove();
-  
+function deletefun(num){
+  Employee_arr.splice(num,1)
+  localStorage.setItem("Employee_data", JSON.stringify(Employee_arr));
+  display(Employee_arr)
 }
+   
